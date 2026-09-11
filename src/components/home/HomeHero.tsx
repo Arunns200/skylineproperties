@@ -33,7 +33,7 @@ export function HomeHero() {
 
       <div className="container-premium relative z-10 grid items-center gap-10 py-24 md:gap-12 md:py-28 lg:min-h-[100svh] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 lg:py-24">
         <motion.div
-          className="flex w-full flex-col items-start text-left max-lg:items-center max-lg:text-center"
+          className="home-hero-brand"
           initial={reduced ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: reduced ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
@@ -49,14 +49,13 @@ export function HomeHero() {
             linked={false}
             priority
             titleAs="h1"
-            className="w-full max-lg:items-center lg:items-start"
           />
           <p className="mt-6 max-w-md text-sm leading-relaxed text-muted md:mt-8 md:text-base">
             {siteConfig.hero.supporting}
           </p>
           <ul className="mt-5 max-w-md space-y-1.5 text-sm text-navy/70 md:mt-6">
             {points.map((point) => (
-              <li key={point} className="flex items-start justify-start gap-2 max-lg:justify-center">
+              <li key={point} className="home-hero-point flex items-start gap-2">
                 <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-lime" aria-hidden />
                 <span>{point}</span>
               </li>

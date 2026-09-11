@@ -125,3 +125,49 @@ h4,
 .text-balance {
   text-wrap: balance;
 }
+
+.home-hero-brand {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-hero-point {
+  justify-content: center;
+}
+
+.brand-logo-hero {
+  display: inline-flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.brand-logo-hero-copy {
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .home-hero-brand {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .brand-logo-hero {
+    align-items: flex-start;
+    margin-inline: 0;
+  }
+
+  .brand-logo-hero-copy {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .home-hero-point {
+    justify-content: flex-start;
+  }
+}
