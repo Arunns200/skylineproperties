@@ -15,7 +15,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.check.outputs.enabled }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" >/dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::GitHub Pages is not enabled. Turn it on in Settings → Pages (Source: GitHub Actions), then re-run this workflow."
+          fi
+
   deploy:
+    needs: detect
+    if: needs.detect.outputs.enabled == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -26,19 +44,9 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - name: Enable GitHub Pages
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api --method POST "repos/${GITHUB_REPOSITORY}/pages" \
-            -f build_type=workflow \
-            || true
       - name: Configure Pages
         id: pages
-        continue-on-error: true
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - run: npm ci
       - name: Build
         run: npm run build
