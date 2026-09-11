@@ -77,7 +77,7 @@ export function BrandLogo({
           className={cn(
             'flex min-w-0 flex-col',
             stacked
-              ? 'items-center text-center lg:items-start lg:text-left'
+              ? 'items-start text-left max-lg:items-center max-lg:text-center'
               : 'items-start text-left',
           )}
         >
@@ -97,7 +97,7 @@ export function BrandLogo({
 
   const classes = cn(
     'inline-flex max-w-full',
-    stacked ? 'flex-col items-center lg:items-start' : 'flex-row items-center',
+    stacked ? 'flex-col items-start max-lg:items-center' : 'flex-row items-center',
     s.gap,
     className,
   )
