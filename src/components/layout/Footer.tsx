@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="border-t border-border bg-forest text-stone">
       <div className="container-premium grid gap-10 py-12 md:grid-cols-3">
         <div>
-          <Link to="/" className="font-display text-2xl">
+          <Link to="/" className="font-sans text-xl font-semibold uppercase tracking-[0.16em]">
             {siteConfig.name}
           </Link>
           <p className="mt-3 max-w-xs text-sm text-mist/80">{siteConfig.tagline}</p>

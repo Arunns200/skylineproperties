@@ -62,7 +62,7 @@ export function LeadCaptureForm({ compact = false, defaultProject }: LeadCapture
     if (!validate()) return
     setSubmitting(true)
     const projectName =
-      projects.find((p) => p.slug === projectSlug)?.name ?? 'Skyline New Town'
+      projects.find((p) => p.slug === projectSlug)?.name ?? siteConfig.name
     try {
       await submitLead({
         name: name.trim(),
@@ -86,7 +86,7 @@ export function LeadCaptureForm({ compact = false, defaultProject }: LeadCapture
 
   return (
     <div className={compact ? '' : 'space-y-5'}>
-      <form onSubmit={onSubmit} className="space-y-4" noValidate>
+      <form onSubmit={onSubmit} className={compact ? 'space-y-3.5' : 'space-y-4'} noValidate>
         <div>
           <Label htmlFor="lead-name">Your name</Label>
           <Input
@@ -134,7 +134,7 @@ export function LeadCaptureForm({ compact = false, defaultProject }: LeadCapture
           <Label htmlFor="lead-message">Message (optional)</Label>
           <Textarea
             id="lead-message"
-            className="mt-1.5 min-h-[80px]"
+            className={compact ? 'mt-1.5 min-h-[72px]' : 'mt-1.5 min-h-[80px]'}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Plot size, budget, preferred visit date…"
@@ -146,21 +146,21 @@ export function LeadCaptureForm({ compact = false, defaultProject }: LeadCapture
         </Button>
       </form>
 
-      <div className="mt-4 grid grid-cols-2 gap-3">
-        <Button asChild variant="outline" size="lg" className="w-full">
+      <div className={compact ? 'mt-3 grid grid-cols-2 gap-2.5' : 'mt-4 grid grid-cols-2 gap-3'}>
+        <Button asChild variant="outline" size={compact ? 'default' : 'lg'} className="w-full">
           <a href={siteConfig.phoneHref}>
             <Phone className="h-4 w-4" />
             Call
           </a>
         </Button>
-        <Button asChild variant="default" size="lg" className="w-full">
+        <Button asChild variant="default" size={compact ? 'default' : 'lg'} className="w-full">
           <a href={siteConfig.whatsappHref} target="_blank" rel="noreferrer">
             <MessageCircle className="h-4 w-4" />
             WhatsApp
           </a>
         </Button>
       </div>
-      <p className="mt-3 text-center text-xs text-muted">
+      <p className={compact ? 'mt-2.5 text-center text-[11px] text-muted' : 'mt-3 text-center text-xs text-muted'}>
         Leads open in WhatsApp to {siteConfig.whatsapp}. Replace number in site config.
       </p>
     </div>

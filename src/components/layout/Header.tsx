@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Menu, MessageCircle, Phone } from 'lucide-react'
+import { BrandLogo } from '@/components/BrandLogo'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { siteConfig } from '@/config/site'
@@ -19,20 +20,14 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-40 transition-all duration-300',
+        'fixed inset-x-0 top-0 z-40 text-ink transition-all duration-300',
         scrolled
-          ? 'border-b border-border/70 bg-stone/95 text-ink shadow-sm backdrop-blur-md'
-          : 'bg-forest/90 text-stone backdrop-blur-sm',
+          ? 'border-b border-border/70 bg-stone/95 shadow-sm backdrop-blur-md'
+          : 'border-b border-transparent bg-stone/80 backdrop-blur-sm',
       )}
     >
       <div className="container-premium flex h-16 items-center justify-between md:h-[4.25rem]">
-        <Link
-          to="/"
-          className="font-display text-2xl tracking-tight md:text-[1.65rem]"
-          aria-label={`${siteConfig.name} home`}
-        >
-          {siteConfig.name}
-        </Link>
+        <BrandLogo size="sm" showWordmark />
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {siteConfig.nav.map((item) => (
@@ -41,9 +36,8 @@ export function Header() {
               to={item.href}
               className={({ isActive }) =>
                 cn(
-                  'text-sm font-medium transition',
-                  scrolled ? 'text-muted hover:text-ink' : 'text-stone/85 hover:text-stone',
-                  isActive && (scrolled ? 'text-forest' : 'text-stone'),
+                  'text-sm font-medium text-muted transition hover:text-navy',
+                  isActive && 'text-navy',
                 )
               }
             >
@@ -53,12 +47,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button
-            asChild
-            size="sm"
-            variant={scrolled ? 'outline' : 'ghost'}
-            className={cn('hidden sm:inline-flex', !scrolled && 'text-stone hover:bg-white/10')}
-          >
+          <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
             <a href={siteConfig.phoneHref} aria-label="Call us">
               <Phone className="h-4 w-4" />
               Call
@@ -73,12 +62,7 @@ export function Header() {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={cn('md:hidden', !scrolled && 'text-stone hover:bg-white/10')}
-                aria-label="Open menu"
-              >
+              <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -99,7 +83,7 @@ export function Header() {
                 ))}
                 <a
                   href={siteConfig.phoneHref}
-                  className="mt-2 inline-flex items-center gap-2 rounded-md px-3 py-3 text-sage"
+                  className="mt-2 inline-flex items-center gap-2 rounded-md px-3 py-3 text-navy"
                 >
                   <Phone className="h-4 w-4" />
                   Call {siteConfig.phone}
@@ -108,7 +92,7 @@ export function Header() {
                   href={siteConfig.whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md px-3 py-3 text-sage"
+                  className="inline-flex items-center gap-2 rounded-md px-3 py-3 text-navy"
                 >
                   <MessageCircle className="h-4 w-4" />
                   WhatsApp
