@@ -32,6 +32,7 @@ type BrandLogoProps = {
   showTagline?: boolean
   stacked?: boolean
   linked?: boolean
+  onDark?: boolean
   className?: string
   priority?: boolean
   titleAs?: 'h1' | 'span'
@@ -43,6 +44,7 @@ export function BrandLogo({
   showTagline = false,
   stacked = false,
   linked = true,
+  onDark = false,
   className,
   priority = false,
   titleAs = 'span',
@@ -53,7 +55,8 @@ export function BrandLogo({
     <Title
       className={cn(
         s.name,
-        'font-sans uppercase leading-none text-navy',
+        'font-sans uppercase leading-none',
+        onDark ? 'text-stone' : 'text-navy',
         titleAs === 'h1' && 'font-semibold',
       )}
     >
@@ -63,15 +66,17 @@ export function BrandLogo({
 
   const content = (
     <>
-      <img
-        src={siteConfig.logo.src}
-        alt=""
-        width={siteConfig.logo.width}
-        height={siteConfig.logo.height}
-        className={cn(s.mark, 'select-none object-contain object-center')}
-        fetchPriority={priority ? 'high' : 'auto'}
-        decoding="async"
-      />
+      <span className={cn(onDark && 'rounded-md bg-white p-1')}>
+        <img
+          src={siteConfig.logo.src}
+          alt=""
+          width={siteConfig.logo.width}
+          height={siteConfig.logo.height}
+          className={cn(s.mark, 'select-none object-contain object-center')}
+          fetchPriority={priority ? 'high' : 'auto'}
+          decoding="async"
+        />
+      </span>
       {showWordmark || showTagline ? (
         <div
           className={cn(

@@ -41,7 +41,7 @@ export function BlogDetailsPage() {
         type="article"
       />
       <article>
-        <header className="bg-forest pb-12 pt-28 text-stone">
+        <header className="bg-navy pb-12 pt-28 text-stone">
           <div className="container-premium max-w-3xl">
             <Badge variant="accent">{post.category}</Badge>
             <h1 className="mt-4 font-display text-4xl md:text-5xl">{post.title}</h1>

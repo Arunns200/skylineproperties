@@ -63,8 +63,8 @@ export function ProjectHighlights({
             const Icon = pickIcon(item)
             return (
               <Reveal key={item} delay={i * 0.04}>
-                <div className="flex gap-4 border border-border/70 bg-surface p-5 transition hover:border-sage/40">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-mist text-forest">
+                <div className="flex gap-4 border border-border/70 bg-surface p-5 transition hover:border-lime/40">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-mist text-navy">
                     <Icon className="h-5 w-5" aria-hidden />
                   </div>
                   <p className="pt-2 text-sm font-medium leading-snug text-ink">{item}</p>

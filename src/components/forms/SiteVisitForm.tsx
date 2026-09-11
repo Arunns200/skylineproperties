@@ -72,8 +72,8 @@ export function SiteVisitForm() {
 
   if (success) {
     return (
-      <div className="flex flex-col items-start gap-3 border border-sage/30 bg-mist/50 p-8">
-        <CheckCircle2 className="h-8 w-8 text-sage" />
+      <div className="flex flex-col items-start gap-3 border border-lime/30 bg-mist/50 p-8">
+        <CheckCircle2 className="h-8 w-8 text-lime" />
         <h3 className="font-display text-2xl text-ink">Site visit requested</h3>
         <p className="text-muted">
           Simulated confirmation only. Wire <code className="text-sm">submitSiteVisit</code> to your
@@ -154,7 +154,7 @@ export function SiteVisitForm() {
       </Button>
       <p className="text-center text-sm text-muted">
         Prefer chat?{' '}
-        <a className="font-medium text-forest underline-offset-4 hover:underline" href={siteConfig.whatsappHref} target="_blank" rel="noreferrer">
+        <a className="font-medium text-navy underline-offset-4 hover:underline" href={siteConfig.whatsappHref} target="_blank" rel="noreferrer">
           WhatsApp us
         </a>
       </p>

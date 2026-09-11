@@ -29,9 +29,6 @@ export const siteConfig = {
   colors: {
     navy: '#0B2C5E',
     lime: '#8CC63F',
-    forest: '#0B2C5E',
-    forestLight: '#163E7A',
-    sage: '#3D6B8A',
     mist: '#EEF2F6',
     stone: '#F7F8F6',
     sand: '#D9D3C6',

@@ -14,7 +14,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
   return (
     <article
       className={cn(
-        'group overflow-hidden border border-border/80 bg-surface transition duration-300 hover:-translate-y-1 hover:border-sage/40',
+        'group overflow-hidden border border-border/80 bg-surface transition duration-300 hover:-translate-y-1 hover:border-lime/40',
         className,
       )}
     >
@@ -37,7 +37,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         <div className="flex items-start justify-between gap-3">
           <div>
             <h3 className="font-display text-2xl text-ink">
-              <Link to={`/projects/${project.slug}`} className="hover:text-forest-light">
+              <Link to={`/projects/${project.slug}`} className="hover:text-navy-light">
                 {project.name}
               </Link>
             </h3>

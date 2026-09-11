@@ -14,7 +14,7 @@ export function DialogOverlay({
   return (
     <DialogPrimitive.Overlay
       className={cn(
-        'fixed inset-0 z-50 bg-forest/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out',
+        'fixed inset-0 z-50 bg-navy/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out',
         className,
       )}
       {...props}

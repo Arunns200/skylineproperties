@@ -12,7 +12,7 @@ export function ContactPage() {
         description="Enquire about sample DTCP plots or book a conversation with the Skyline Properties team."
         path="/contact"
       />
-      <section className="bg-forest pb-16 pt-28 text-stone">
+      <section className="bg-navy pb-16 pt-28 text-stone">
         <div className="container-premium">
           <SectionHeading
             light
@@ -28,25 +28,25 @@ export function ContactPage() {
             <h2 className="font-display text-3xl text-ink">Reach us</h2>
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
-                <Phone className="mt-0.5 h-4 w-4 text-sage" />
+                <Phone className="mt-0.5 h-4 w-4 text-lime" />
                 <a href={siteConfig.phoneHref} className="hover:underline">
                   {siteConfig.phone}
                 </a>
               </li>
               <li className="flex gap-3">
-                <MessageCircle className="mt-0.5 h-4 w-4 text-sage" />
+                <MessageCircle className="mt-0.5 h-4 w-4 text-lime" />
                 <a href={siteConfig.whatsappHref} target="_blank" rel="noreferrer" className="hover:underline">
                   WhatsApp · {siteConfig.whatsapp}
                 </a>
               </li>
               <li className="flex gap-3">
-                <Mail className="mt-0.5 h-4 w-4 text-sage" />
+                <Mail className="mt-0.5 h-4 w-4 text-lime" />
                 <a href={siteConfig.emailHref} className="hover:underline">
                   {siteConfig.email}
                 </a>
               </li>
               <li className="flex gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 text-sage" />
+                <MapPin className="mt-0.5 h-4 w-4 text-lime" />
                 <span>
                   {siteConfig.address.line1}
                   <br />
@@ -56,7 +56,7 @@ export function ContactPage() {
                 </span>
               </li>
               <li className="flex gap-3">
-                <Clock className="mt-0.5 h-4 w-4 text-sage" />
+                <Clock className="mt-0.5 h-4 w-4 text-lime" />
                 <span>{siteConfig.officeHours}</span>
               </li>
             </ul>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { BrandLogo } from '@/components/BrandLogo'
 import { siteConfig } from '@/config/site'
 import { projects } from '@/data/projects'
 
@@ -6,22 +7,17 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border bg-forest text-stone">
+    <footer className="border-t border-white/10 bg-navy text-stone">
       <div className="container-premium grid gap-10 py-12 md:grid-cols-3">
         <div>
-          <Link to="/" className="font-sans text-xl font-semibold uppercase tracking-[0.16em]">
-            {siteConfig.name}
-          </Link>
-          <p className="mt-3 max-w-xs text-sm text-mist/80">{siteConfig.tagline}</p>
+          <BrandLogo size="sm" showWordmark showTagline onDark />
         </div>
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-soft">
-            Links
-          </h3>
+          <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-lime">Links</h3>
           <ul className="mt-3 space-y-2 text-sm text-mist/85">
             <li>
               <Link to="/" className="hover:text-stone">
-                Home / Enquire
+                Home / {siteConfig.cta.bookVisit}
               </Link>
             </li>
             <li>
@@ -44,9 +40,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-soft">
-            Talk to us
-          </h3>
+          <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-lime">Talk to us</h3>
           <ul className="mt-3 space-y-2 text-sm text-mist/85">
             <li>
               <a href={siteConfig.phoneHref} className="hover:text-stone">

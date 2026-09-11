@@ -20,7 +20,7 @@ export function Seo({
 }: SeoProps) {
   const fullTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} | ${siteConfig.tagline}`
   const url = `${siteConfig.url}${path}`
-  const ogImage = image ?? `${siteConfig.url}/images/hero/hero-placeholder.jpg`
+  const ogImage = image ?? `${siteConfig.url}${siteConfig.logo.src}`
 
   useEffect(() => {
     document.title = fullTitle
@@ -36,14 +36,17 @@ export function Seo({
     }
 
     setMeta('name', 'description', description)
+    setMeta('name', 'theme-color', siteConfig.colors.navy)
     setMeta('property', 'og:title', fullTitle)
     setMeta('property', 'og:description', description)
     setMeta('property', 'og:type', type)
     setMeta('property', 'og:url', url)
     setMeta('property', 'og:image', ogImage)
+    setMeta('property', 'og:site_name', siteConfig.name)
     setMeta('name', 'twitter:card', 'summary_large_image')
     setMeta('name', 'twitter:title', fullTitle)
     setMeta('name', 'twitter:description', description)
+    setMeta('name', 'twitter:image', ogImage)
 
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
     if (!canonical) {

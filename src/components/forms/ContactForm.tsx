@@ -63,8 +63,8 @@ export function ContactForm({ defaultProject }: { defaultProject?: string }) {
 
   if (success) {
     return (
-      <div className="flex flex-col items-start gap-3 border border-sage/30 bg-mist/50 p-8">
-        <CheckCircle2 className="h-8 w-8 text-sage" />
+      <div className="flex flex-col items-start gap-3 border border-lime/30 bg-mist/50 p-8">
+        <CheckCircle2 className="h-8 w-8 text-lime" />
         <h3 className="font-display text-2xl text-ink">Enquiry received</h3>
         <p className="text-muted">
           This is a simulated success message. Connect Supabase/Firebase in{' '}

@@ -16,18 +16,18 @@ export function CtaBand({
   className,
 }: CtaBandProps) {
   return (
-    <section className={cn('relative overflow-hidden bg-forest py-20 md:py-28', className)}>
+    <section className={cn('relative overflow-hidden bg-navy py-20 md:py-28', className)}>
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           background:
-            'radial-gradient(ellipse 70% 80% at 80% 20%, rgba(176,141,87,0.25), transparent), radial-gradient(ellipse 50% 60% at 10% 90%, rgba(61,107,90,0.35), transparent)',
+            'radial-gradient(ellipse 70% 80% at 80% 20%, rgba(140,198,63,0.28), transparent), radial-gradient(ellipse 50% 60% at 10% 90%, rgba(11,44,94,0.35), transparent)',
         }}
         aria-hidden
       />
       <div className="container-premium relative text-center">
-        <p className="text-xs font-medium uppercase tracking-[0.22em] text-accent-soft">
-          Site visit
+        <p className="text-xs font-medium uppercase tracking-[0.22em] text-lime">
+          {siteConfig.cta.bookVisit}
         </p>
         <h2 className="mx-auto mt-4 max-w-3xl font-display text-4xl text-stone md:text-5xl">
           {title}

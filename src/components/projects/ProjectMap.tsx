@@ -26,19 +26,19 @@ export function ProjectMap({ lat, lng, name }: ProjectMapProps) {
             className="absolute inset-0 opacity-40"
             style={{
               backgroundImage:
-                'linear-gradient(to right, rgba(12,46,36,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(12,46,36,0.08) 1px, transparent 1px)',
+                'linear-gradient(to right, rgba(11,44,94,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(11,44,94,0.08) 1px, transparent 1px)',
               backgroundSize: '40px 40px',
             }}
             aria-hidden
           />
           <div className="relative z-10 flex max-w-sm flex-col items-center gap-3 p-6 text-center">
-            <MapPinned className="h-10 w-10 text-forest" />
+            <MapPinned className="h-10 w-10 text-navy" />
             <p className="text-sm text-muted">
               Map placeholder — drop in Google Maps Embed or JS API here without changing surrounding UI.
             </p>
             {hasCoords ? (
               <a
-                className="text-sm font-medium text-forest underline-offset-4 hover:underline"
+                className="text-sm font-medium text-navy underline-offset-4 hover:underline"
                 href={`https://www.google.com/maps?q=${lat},${lng}`}
                 target="_blank"
                 rel="noreferrer"

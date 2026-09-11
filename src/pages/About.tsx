@@ -13,9 +13,9 @@ export function AboutPage() {
         description={aboutContent.heroSubtitle}
         path="/about"
       />
-      <section className="bg-forest pb-16 pt-28 text-stone">
+      <section className="bg-navy pb-16 pt-28 text-stone">
         <div className="container-premium max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.22em] text-accent-soft">{aboutContent.eyebrow}</p>
+          <p className="text-xs uppercase tracking-[0.22em] text-lime">{aboutContent.eyebrow}</p>
           <h1 className="mt-4 font-display text-5xl md:text-6xl">{aboutContent.heroTitle}</h1>
           <p className="mt-5 text-lg text-mist/85">{aboutContent.heroSubtitle}</p>
         </div>
@@ -36,7 +36,7 @@ export function AboutPage() {
               <h3 className="font-display text-2xl text-ink">Vision</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">{aboutContent.vision}</p>
             </div>
-            <div className="bg-forest p-6 text-stone">
+            <div className="bg-navy p-6 text-stone">
               <h3 className="font-display text-2xl">Mission</h3>
               <p className="mt-3 text-sm leading-relaxed text-mist/85">{aboutContent.mission}</p>
             </div>
@@ -61,7 +61,7 @@ export function AboutPage() {
         <div className="container-premium grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((s) => (
             <div key={s.id}>
-              <p className="font-display text-4xl text-forest">{s.value}</p>
+              <p className="font-display text-4xl text-navy">{s.value}</p>
               <p className="mt-1 text-sm text-ink">{s.label}</p>
             </div>
           ))}
@@ -74,7 +74,7 @@ export function AboutPage() {
           <ol className="mt-10 space-y-6 border-l border-border pl-6">
             {aboutContent.milestones.map((m) => (
               <li key={m.title + m.year}>
-                <p className="text-xs uppercase tracking-[0.16em] text-sage">{m.year}</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-lime">{m.year}</p>
                 <h3 className="mt-1 font-display text-2xl text-ink">{m.title}</h3>
                 <p className="mt-2 text-sm text-muted">{m.description}</p>
               </li>
@@ -97,7 +97,7 @@ export function AboutPage() {
                 />
                 <div>
                   <h3 className="font-display text-2xl text-ink">{person.name}</h3>
-                  <p className="text-sm text-sage">{person.role}</p>
+                  <p className="text-sm text-lime">{person.role}</p>
                   <p className="mt-2 text-sm text-muted">{person.bio}</p>
                 </div>
               </article>

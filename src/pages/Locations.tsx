@@ -30,7 +30,7 @@ export function LocationsPage() {
         description="Explore sample markets across Chennai, Pondicherry, Chengalpattu and more."
         path="/locations"
       />
-      <section className="bg-forest pb-16 pt-28 text-stone">
+      <section className="bg-navy pb-16 pt-28 text-stone">
         <div className="container-premium">
           <SectionHeading
             light

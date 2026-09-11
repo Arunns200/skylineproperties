@@ -1,3 +1,4 @@
+import { PageBanner } from '@/components/PageBanner'
 import { Seo } from '@/components/Seo'
 import { siteConfig } from '@/config/site'
 
@@ -5,9 +6,9 @@ export function PrivacyPolicyPage() {
   return (
     <>
       <Seo title="Privacy Policy" path="/privacy-policy" description="Placeholder privacy policy." />
-      <section className="container-premium max-w-3xl pb-20 pt-28">
-        <h1 className="font-display text-4xl text-ink">Privacy Policy</h1>
-        <p className="mt-4 text-sm text-muted">
+      <PageBanner eyebrow={siteConfig.name} title="Privacy Policy" />
+      <section className="container-premium max-w-3xl pb-20 pt-12">
+        <p className="text-sm text-muted">
           Placeholder legal text for {siteConfig.name}. Replace with counsel-approved policy before
           launch.
         </p>

@@ -1,3 +1,4 @@
+import { PageBanner } from '@/components/PageBanner'
 import { Seo } from '@/components/Seo'
 import { siteConfig } from '@/config/site'
 
@@ -5,9 +6,9 @@ export function TermsPage() {
   return (
     <>
       <Seo title="Terms of Use" path="/terms" description="Placeholder terms of use." />
-      <section className="container-premium max-w-3xl pb-20 pt-28">
-        <h1 className="font-display text-4xl text-ink">Terms of Use</h1>
-        <p className="mt-4 text-sm text-muted">
+      <PageBanner eyebrow={siteConfig.name} title="Terms of Use" />
+      <section className="container-premium max-w-3xl pb-20 pt-12">
+        <p className="text-sm text-muted">
           Placeholder terms for {siteConfig.name}. Replace with counsel-approved terms before
           launch.
         </p>

@@ -6,12 +6,12 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-forest text-stone',
-        secondary: 'bg-mist text-forest',
-        accent: 'bg-accent/15 text-accent',
+        default: 'bg-navy text-stone',
+        secondary: 'bg-mist text-navy',
+        accent: 'bg-lime/15 text-navy',
         outline: 'border border-border text-muted',
-        success: 'bg-sage/15 text-sage',
-        warning: 'bg-accent/20 text-ink',
+        success: 'bg-lime/15 text-navy',
+        warning: 'bg-lime/20 text-navy',
         muted: 'bg-stone text-muted',
       },
     },

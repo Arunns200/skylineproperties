@@ -16,14 +16,14 @@ export function FloatingActions() {
             target="_blank"
             rel="noreferrer"
             aria-label="Chat on WhatsApp"
-            className="pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:scale-105"
+            className="pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition motion-safe:hover:scale-105"
           >
             <MessageCircle className="h-5 w-5" />
           </a>
           <a
             href={siteConfig.phoneHref}
             aria-label={`Call ${siteConfig.phone}`}
-            className="pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-forest text-stone shadow-lg transition hover:scale-105"
+            className="pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-navy text-stone shadow-lg transition motion-safe:hover:scale-105"
           >
             <Phone className="h-5 w-5" />
           </a>
@@ -38,9 +38,9 @@ export function FloatingActions() {
         >
           <a
             href="/"
-            className="flex h-11 w-full items-center justify-center rounded-md bg-accent text-sm font-semibold text-ink"
+            className="flex h-11 w-full items-center justify-center rounded-md bg-lime text-sm font-semibold text-navy"
           >
-            Enquire / WhatsApp
+            {siteConfig.cta.bookVisit}
           </a>
         </div>
       ) : null}

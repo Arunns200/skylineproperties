@@ -48,15 +48,15 @@ export function LocationDetailsPage() {
         path={`/locations/${location.slug}`}
         image={location.image}
       />
-      <section className="relative min-h-[50vh] overflow-hidden bg-forest">
+      <section className="relative min-h-[50vh] overflow-hidden bg-navy">
         <img
           src={location.image}
           alt={`${location.name} — replace with your photography`}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-forest/65" />
+        <div className="absolute inset-0 bg-navy/65" />
         <div className="container-premium relative z-10 flex min-h-[50vh] flex-col justify-end pb-12 pt-28 text-stone">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent-soft">{location.region}</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-lime">{location.region}</p>
           <h1 className="mt-3 font-display text-5xl md:text-6xl">{location.name}</h1>
           <p className="mt-4 max-w-2xl text-mist/90">{location.shortDescription}</p>
         </div>

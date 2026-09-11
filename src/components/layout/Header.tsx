@@ -68,7 +68,8 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-stone">
               <SheetHeader>
-                <SheetTitle>{siteConfig.name}</SheetTitle>
+                <SheetTitle className="sr-only">{siteConfig.name}</SheetTitle>
+                <BrandLogo size="sm" showWordmark linked={false} />
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-3 py-4" aria-label="Mobile">
                 {mobileLinks.map((item) => (

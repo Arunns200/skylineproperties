@@ -76,7 +76,7 @@ export function ProjectDetailsPage() {
       <section className="py-20 md:py-24">
         <div className="container-premium grid items-center gap-10 lg:grid-cols-2">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.2em] text-sage">About the project</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-lime">About the project</p>
             <h2 className="mt-3 font-display text-3xl text-ink md:text-4xl">{displayName}</h2>
             <p className="mt-5 leading-relaxed text-muted">{project.description}</p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -121,7 +121,7 @@ export function ProjectDetailsPage() {
               'Future development',
               'Investment potential',
             ].map((item) => (
-              <li key={item} className="border-l-2 border-accent pl-3">
+              <li key={item} className="border-l-2 border-lime pl-3">
                 {item} <span className="text-muted">(sample theme — expand with your research)</span>
               </li>
             ))}

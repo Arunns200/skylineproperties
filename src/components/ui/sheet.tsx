@@ -16,7 +16,7 @@ export function SheetContent({
 }) {
   return (
     <DialogPrimitive.Portal>
-      <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-forest/50 backdrop-blur-sm" />
+      <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-navy/50 backdrop-blur-sm" />
       <DialogPrimitive.Content
         className={cn(
           'fixed z-50 flex flex-col bg-surface shadow-xl transition ease-out',

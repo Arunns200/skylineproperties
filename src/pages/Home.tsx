@@ -10,7 +10,28 @@ import { projects } from '@/data/projects'
 export function HomePage() {
   return (
     <>
-      <Seo path="/" description={siteConfig.description} />
+      <Seo
+        path="/"
+        description={siteConfig.description}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'RealEstateAgent',
+          name: siteConfig.name,
+          slogan: siteConfig.tagline,
+          url: siteConfig.url,
+          telephone: siteConfig.phone,
+          email: siteConfig.email,
+          image: `${siteConfig.url}${siteConfig.logo.src}`,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: `${siteConfig.address.line1}, ${siteConfig.address.line2}`,
+            addressLocality: siteConfig.address.city,
+            addressRegion: siteConfig.address.state,
+            postalCode: siteConfig.address.pincode,
+            addressCountry: 'IN',
+          },
+        }}
+      />
 
       <HomeHero />
 
@@ -18,7 +39,7 @@ export function HomePage() {
         <div className="container-premium">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-sage">Projects</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-lime">Projects</p>
               <h2 className="mt-2 font-display text-3xl text-ink md:text-4xl">Our plots</h2>
             </div>
             <Button asChild variant="outline">
@@ -36,12 +57,12 @@ export function HomePage() {
       <section id="mission" className="border-t border-border bg-mist/40 py-16 md:py-20">
         <div className="container-premium grid gap-8 md:grid-cols-2">
           <div className="border border-border bg-surface p-6 md:p-8">
-            <p className="text-xs uppercase tracking-[0.18em] text-accent">Mission</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-lime">Mission</p>
             <h2 className="mt-3 font-display text-3xl text-ink">Our mission</h2>
             <p className="mt-4 leading-relaxed text-muted">{aboutContent.mission}</p>
           </div>
-          <div className="border border-border bg-forest p-6 text-stone md:p-8">
-            <p className="text-xs uppercase tracking-[0.18em] text-accent-soft">Vision</p>
+          <div className="border border-border bg-navy p-6 text-stone md:p-8">
+            <p className="text-xs uppercase tracking-[0.18em] text-lime">Vision</p>
             <h2 className="mt-3 font-display text-3xl">Our vision</h2>
             <p className="mt-4 leading-relaxed text-mist/85">{aboutContent.vision}</p>
           </div>

@@ -12,7 +12,7 @@ export function Hero() {
   const reduced = usePrefersReducedMotion()
 
   return (
-    <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-forest">
+    <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-navy">
       <img
         src={HERO_IMAGE}
         alt="Replace with your DTCP plotted land photography"
@@ -20,7 +20,7 @@ export function Hero() {
         fetchPriority="high"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/35"
+        className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/35"
         aria-hidden
       />
       <div
@@ -33,7 +33,7 @@ export function Hero() {
           initial={reduced ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-xs font-medium uppercase tracking-[0.28em] text-accent-soft"
+          className="text-xs font-medium uppercase tracking-[0.28em] text-lime"
         >
           DTCP Approved Plots
         </motion.p>

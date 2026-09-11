@@ -12,7 +12,7 @@ export function WhyInvestPage() {
         description="Educational overview of location strategy, documentation, and site-visit-led buying."
         path="/why-invest"
       />
-      <section className="bg-forest pb-16 pt-28 text-stone">
+      <section className="bg-navy pb-16 pt-28 text-stone">
         <div className="container-premium max-w-3xl">
           <SectionHeading
             light
@@ -26,7 +26,7 @@ export function WhyInvestPage() {
         <div className="container-premium grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {whyInvestCards.map((card, i) => (
             <Reveal key={card.title} delay={i * 0.04}>
-              <article className="h-full border border-border bg-surface p-6 transition hover:border-sage/40">
+              <article className="h-full border border-border bg-surface p-6 transition hover:border-lime/40">
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
                   0{i + 1}
                 </p>

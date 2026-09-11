@@ -7,13 +7,13 @@ import { siteConfig } from '@/config/site'
 
 export function ProjectHero({ project }: { project: Project }) {
   return (
-    <section className="relative min-h-[70vh] overflow-hidden bg-forest">
+    <section className="relative min-h-[70vh] overflow-hidden bg-navy">
       <img
         src={project.heroImage}
         alt={`${project.name} hero — replace with your photography`}
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/65 to-forest/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/65 to-navy/30" />
       <div className="container-premium relative z-10 flex min-h-[70vh] flex-col justify-end pb-14 pt-28">
         <div className="flex flex-wrap gap-2">
           <Badge variant="accent">{project.status}</Badge>
@@ -26,7 +26,7 @@ export function ProjectHero({ project }: { project: Project }) {
           <MapPin className="h-4 w-4" />
           {project.location}, {project.state}
         </p>
-        <p className="mt-2 text-lg text-accent-soft">Starting from {project.priceFrom}</p>
+        <p className="mt-2 text-lg text-lime">Starting from {project.priceFrom}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button asChild size="lg" variant="accent">
             <Link to="/">{siteConfig.cta.bookVisit}</Link>

@@ -81,7 +81,7 @@ export function Testimonials({ items, className }: TestimonialsProps) {
                 aria-label={`Show testimonial ${i + 1}`}
                 className={cn(
                   'h-2 w-2 rounded-full transition',
-                  i === index ? 'bg-forest' : 'bg-border hover:bg-sage/50',
+                  i === index ? 'bg-navy' : 'bg-border hover:bg-lime/50',
                 )}
                 onClick={() => setIndex(i)}
               />

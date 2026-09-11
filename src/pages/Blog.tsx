@@ -23,7 +23,7 @@ export function BlogPage() {
         description="Sample guides on plotted developments, locations, and site visits."
         path="/blog"
       />
-      <section className="bg-forest pb-16 pt-28 text-stone">
+      <section className="bg-navy pb-16 pt-28 text-stone">
         <div className="container-premium">
           <SectionHeading
             light
@@ -41,7 +41,7 @@ export function BlogPage() {
               onClick={() => setCategory('all')}
               className={cn(
                 'rounded-sm px-3 py-1.5 text-sm',
-                category === 'all' ? 'bg-forest text-stone' : 'bg-mist text-ink hover:bg-sand/40',
+                category === 'all' ? 'bg-navy text-stone' : 'bg-mist text-ink hover:bg-sand/40',
               )}
             >
               All
@@ -53,7 +53,7 @@ export function BlogPage() {
                 onClick={() => setCategory(c)}
                 className={cn(
                   'rounded-sm px-3 py-1.5 text-sm',
-                  category === c ? 'bg-forest text-stone' : 'bg-mist text-ink hover:bg-sand/40',
+                  category === c ? 'bg-navy text-stone' : 'bg-mist text-ink hover:bg-sand/40',
                 )}
               >
                 {c}
@@ -83,7 +83,7 @@ export function BlogPage() {
                   <p className="mt-2 line-clamp-3 text-sm text-muted">{post.excerpt}</p>
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="mt-4 inline-flex text-sm font-medium text-forest underline-offset-4 hover:underline"
+                    className="mt-4 inline-flex text-sm font-medium text-navy underline-offset-4 hover:underline"
                   >
                     Read more
                   </Link>

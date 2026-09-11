@@ -78,7 +78,7 @@ export function ProjectGallery({ images, name }: { images: string[]; name: strin
       </div>
 
       <Dialog open={lightbox} onOpenChange={setLightbox}>
-        <DialogContent className="max-w-5xl border-0 bg-forest p-0 text-stone">
+        <DialogContent className="max-w-5xl border-0 bg-navy p-0 text-stone">
           <DialogTitle className="sr-only">{name} gallery lightbox</DialogTitle>
           <div className="relative">
             <img src={current} alt="" className="max-h-[80vh] w-full object-contain" />

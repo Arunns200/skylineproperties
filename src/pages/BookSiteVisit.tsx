@@ -10,7 +10,7 @@ export function BookSiteVisitPage() {
         description="Schedule a complimentary site visit to experience the property in person."
         path="/book-site-visit"
       />
-      <section className="relative overflow-hidden bg-forest pb-16 pt-28 text-stone">
+      <section className="relative overflow-hidden bg-navy pb-16 pt-28 text-stone">
         <div
           className="pointer-events-none absolute inset-0 opacity-50"
           style={{
@@ -19,7 +19,7 @@ export function BookSiteVisitPage() {
           }}
         />
         <div className="container-premium relative max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.22em] text-accent-soft">Site visit</p>
+          <p className="text-xs uppercase tracking-[0.22em] text-lime">Site visit</p>
           <h1 className="mt-4 font-display text-4xl md:text-6xl">
             Experience the Property in Person.
           </h1>
@@ -43,7 +43,7 @@ export function BookSiteVisitPage() {
               href={siteConfig.whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex text-sm font-medium text-forest underline-offset-4 hover:underline"
+              className="mt-8 inline-flex text-sm font-medium text-navy underline-offset-4 hover:underline"
             >
               Prefer WhatsApp? Message us directly →
             </a>
