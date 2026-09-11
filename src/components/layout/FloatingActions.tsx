@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { MessageCircle, Phone } from 'lucide-react'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
@@ -36,12 +36,12 @@ export function FloatingActions() {
             'fixed inset-x-0 bottom-0 z-30 border-t border-border bg-stone/95 p-3 backdrop-blur md:hidden',
           )}
         >
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex h-11 w-full items-center justify-center rounded-md bg-lime text-sm font-semibold text-navy"
           >
             {siteConfig.cta.bookVisit}
-          </a>
+          </Link>
         </div>
       ) : null}
     </>

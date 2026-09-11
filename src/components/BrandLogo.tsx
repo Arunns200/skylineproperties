@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { siteConfig } from '@/config/site'
-import { cn } from '@/lib/utils'
+import { cn, publicUrl } from '@/lib/utils'
 
 const sizes = {
   sm: {
@@ -68,7 +68,7 @@ export function BrandLogo({
     <>
       <span className={cn(onDark && 'rounded-md bg-white p-1')}>
         <img
-          src={siteConfig.logo.src}
+          src={publicUrl(siteConfig.logo.src)}
           alt=""
           width={siteConfig.logo.width}
           height={siteConfig.logo.height}

@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from '@/components/layout/Layout'
+import { routerBasename } from '@/lib/utils'
 
 const HomePage = lazy(() => import('@/pages/Home').then((m) => ({ default: m.HomePage })))
 const ProjectsPage = lazy(() =>
@@ -27,7 +28,7 @@ function PageLoader() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route element={<Layout />}>
