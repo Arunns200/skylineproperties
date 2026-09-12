@@ -3,34 +3,13 @@ import { siteConfig } from '@/config/site'
 import { cn, publicUrl } from '@/lib/utils'
 
 const sizes = {
-  sm: {
-    mark: 'h-9 w-auto sm:h-10',
-    name: 'text-[0.95rem] font-semibold tracking-[0.14em] sm:text-lg',
-    tagline: 'text-[8px] tracking-[0.28em] sm:text-[9px]',
-    gap: 'gap-2.5',
-    rule: 'mt-1 h-px w-10',
-  },
-  md: {
-    mark: 'h-12 w-auto',
-    name: 'text-xl font-semibold tracking-[0.16em]',
-    tagline: 'text-[10px] tracking-[0.32em]',
-    gap: 'gap-3',
-    rule: 'mt-1.5 h-px w-12',
-  },
-  hero: {
-    mark: 'h-[9.5rem] w-auto sm:h-[11.5rem] md:h-[13.5rem] lg:h-[15.25rem]',
-    name: 'text-[1.7rem] font-semibold tracking-[0.2em] sm:text-4xl md:text-[2.75rem] lg:text-5xl',
-    tagline: 'text-[11px] tracking-[0.42em] sm:text-sm md:text-[0.95rem]',
-    gap: 'gap-5 md:gap-6',
-    rule: 'mt-3 h-[2px] w-16 sm:w-20',
-  },
+  sm: 'h-11 w-auto max-w-[11.5rem] sm:h-12 sm:max-w-[13rem]',
+  md: 'h-[4.5rem] w-auto max-w-[14rem]',
+  hero: 'h-auto w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] lg:max-w-[32rem]',
 } as const
 
 type BrandLogoProps = {
   size?: keyof typeof sizes
-  showWordmark?: boolean
-  showTagline?: boolean
-  stacked?: boolean
   linked?: boolean
   onDark?: boolean
   className?: string
@@ -40,71 +19,33 @@ type BrandLogoProps = {
 
 export function BrandLogo({
   size = 'md',
-  showWordmark = true,
-  showTagline = false,
-  stacked = false,
   linked = true,
   onDark = false,
   className,
   priority = false,
   titleAs = 'span',
 }: BrandLogoProps) {
-  const s = sizes[size]
-  const Title = titleAs
-  const wordmark = showWordmark ? (
-    <Title
-      className={cn(
-        s.name,
-        'font-sans uppercase leading-none',
-        onDark ? 'text-stone' : 'text-navy',
-        titleAs === 'h1' && 'font-semibold',
-      )}
-    >
-      {siteConfig.name}
-    </Title>
-  ) : null
+  const label = `${siteConfig.name} — ${siteConfig.tagline}`
+  const image = (
+    <img
+      src={publicUrl(siteConfig.logo.src)}
+      alt={titleAs === 'h1' ? '' : label}
+      width={siteConfig.logo.width}
+      height={siteConfig.logo.height}
+      className={cn(sizes[size], 'select-none object-contain object-center')}
+      fetchPriority={priority ? 'high' : 'auto'}
+      decoding="async"
+    />
+  )
 
   const content = (
     <>
-      <span className={cn(onDark && 'rounded-md bg-white p-1')}>
-        <img
-          src={publicUrl(siteConfig.logo.src)}
-          alt=""
-          width={siteConfig.logo.width}
-          height={siteConfig.logo.height}
-          className={cn(s.mark, 'select-none object-contain object-center')}
-          fetchPriority={priority ? 'high' : 'auto'}
-          decoding="async"
-        />
-      </span>
-      {showWordmark || showTagline ? (
-        <div
-          className={cn(
-            'flex min-w-0 flex-col',
-            stacked
-              ? 'brand-logo-hero-copy items-center text-center'
-              : 'items-start text-left',
-          )}
-        >
-          {wordmark}
-          {showTagline ? (
-            <>
-              <span className={cn(s.rule, 'bg-lime')} aria-hidden />
-              <span className={cn(s.tagline, 'mt-2.5 font-medium uppercase text-lime')}>
-                {siteConfig.tagline}
-              </span>
-            </>
-          ) : null}
-        </div>
-      ) : null}
+      <span className={cn(onDark && 'inline-flex rounded-lg bg-white px-2.5 py-2')}>{image}</span>
+      {titleAs === 'h1' ? <h1 className="sr-only">{siteConfig.name}</h1> : null}
     </>
   )
 
-  const classes = cn(
-    'inline-flex max-w-full',
-    stacked ? cn('brand-logo-hero', s.gap) : cn('flex-row items-center', s.gap),
-    className,
-  )
+  const classes = cn('inline-flex max-w-full items-center', size === 'hero' && 'brand-logo-hero', className)
 
   if (linked) {
     return (
@@ -115,7 +56,7 @@ export function BrandLogo({
   }
 
   return (
-    <div className={classes} role={showWordmark ? undefined : 'img'} aria-label={siteConfig.name}>
+    <div className={classes} role={titleAs === 'h1' ? undefined : 'img'} aria-label={titleAs === 'h1' ? undefined : label}>
       {content}
     </div>
   )
