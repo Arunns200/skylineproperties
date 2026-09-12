@@ -41,15 +41,7 @@ export function HomeHero() {
           <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.28em] text-navy/55 md:mb-6">
             {siteConfig.hero.eyebrow}
           </p>
-          <BrandLogo
-            size="hero"
-            stacked
-            showWordmark
-            showTagline
-            linked={false}
-            priority
-            titleAs="h1"
-          />
+          <BrandLogo size="hero" linked={false} priority titleAs="h1" />
           <p className="mt-6 max-w-md text-sm leading-relaxed text-muted md:mt-8 md:text-base">
             {siteConfig.hero.supporting}
           </p>

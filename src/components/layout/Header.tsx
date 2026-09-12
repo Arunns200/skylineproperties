@@ -27,7 +27,7 @@ export function Header() {
       )}
     >
       <div className="container-premium flex h-16 items-center justify-between md:h-[4.25rem]">
-        <BrandLogo size="sm" showWordmark />
+        <BrandLogo size="sm" />
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {siteConfig.nav.map((item) => (
@@ -69,7 +69,7 @@ export function Header() {
             <SheetContent side="right" className="bg-stone">
               <SheetHeader>
                 <SheetTitle className="sr-only">{siteConfig.name}</SheetTitle>
-                <BrandLogo size="sm" showWordmark linked={false} />
+                <BrandLogo size="sm" linked={false} />
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-3 py-4" aria-label="Mobile">
                 {mobileLinks.map((item) => (

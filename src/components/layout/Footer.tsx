@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-navy text-stone">
       <div className="container-premium grid gap-10 py-12 md:grid-cols-3">
         <div>
-          <BrandLogo size="sm" showWordmark showTagline onDark />
+          <BrandLogo size="md" onDark />
         </div>
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-lime">Links</h3>

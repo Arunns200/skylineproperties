@@ -23,8 +23,8 @@ export const siteConfig = {
   officeHours: 'Mon–Sat · 10:00 AM – 6:30 PM IST (Sample hours — replace)',
   logo: {
     src: '/images/logo/skyline-properties-logo.png',
-    width: 900,
-    height: 504,
+    width: 951,
+    height: 488,
   },
   colors: {
     navy: '#0B2C5E',
